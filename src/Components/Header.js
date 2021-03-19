@@ -12,7 +12,7 @@ const Header = () => {
     <div className="header">
       <div className="logo-nav">
         <div className="logo-container">
-          <a href="#">
+          <a href="/">
             <img
               src="https://i.ibb.co/PTjZtFm/Panchhi-Dental-Clinic.png"
               width="50px"
