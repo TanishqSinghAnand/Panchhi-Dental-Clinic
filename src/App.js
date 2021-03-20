@@ -1,5 +1,10 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Contact from "./Contact";
 import Home from "./Home";
 import Faq from "./FAQ";
@@ -10,9 +15,10 @@ function App() {
   return (
     <div style={{ height: "100%" }}>
       <Router>
+        <Redirect to="/home" />
         <Header />
         <Switch>
-          <Route path="/">
+          <Route path="/home">
             <Home />
           </Route>
           <Route path="/contact">

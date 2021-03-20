@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ReactComponent as CloseMenu } from "./x.svg";
 import { ReactComponent as MenuIcon } from "./menu.svg";
 import "./header.css";
@@ -8,6 +8,7 @@ const Header = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
+  const check = true;
   return (
     <div className="header">
       <div className="logo-nav">
