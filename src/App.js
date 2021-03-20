@@ -5,13 +5,12 @@ import Home from "./Home";
 import Faq from "./FAQ";
 import Gallery from "./Gallery";
 import Timings from "./Timings";
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 function App() {
   return (
     <div style={{ height: "100%" }}>
       <Router>
         <Header />
-        <h1>HII</h1>
         <Switch>
           <Route path="/">
             <Home />
