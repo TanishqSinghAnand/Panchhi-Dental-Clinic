@@ -14,27 +14,27 @@ import Header from "./Components/Header/Header";
 function App() {
   return (
     <div style={{ height: "100%" }}>
-      <Router>
-        <Redirect to="/home" />
-        <Header />
-        <Switch>
-          <Route path="/home">
+      <Header/>
+      {/* <Router> */}
+        {/* <Redirect to="/home" /> */}
+        {/* <Switch> */}
+          {/* <Route path="/home"> */}
             <Home />
-          </Route>
-          <Route path="/contact">
+          {/* </Route> */}
+          {/* <Route path="/contact"> */}
             <Contact />
-          </Route>
-          <Route path="/faq">
+          {/* </Route> */}
+          {/* <Route path="/faq"> */}
             <Faq />
-          </Route>
-          <Route path="/gallery">
+          {/* </Route> */}
+          {/* <Route path="/gallery"> */}
             <Gallery />
-          </Route>
-          <Route path="/timings">
+          {/* </Route> */}
+          {/* <Route path="/timings"> */}
             <Timings />
-          </Route>
-        </Switch>
-      </Router>
+          {/* </Route> */}
+        {/* </Switch> */}
+      {/* </Router> */}
     </div>
   );
 }

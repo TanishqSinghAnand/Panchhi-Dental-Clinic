@@ -2,12 +2,14 @@ import React, { setState } from "react";
 import { ScheduleMeeting } from "react-schedule-meeting";
 import TextField from "@material-ui/core/TextField";
 import db from "./firebase";
+import Header from "./Components/Header/Header";
 
+const isEmailValid = (email) => {
+  var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  return !!email && typeof email === "string" && email.match(emailformat);
+};
 function Calendar() {
-  const isEmailValid = (email) => {
-    var emailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    return !!email && typeof email === "string" && email.match(emailformat);
-  };
+  
   const availableTimeslots = [0, 1, 2, 3, 4, 5].map((id) => {
     return {
       id,
@@ -32,9 +34,10 @@ function Calendar() {
   isEmailValid("anandtanishqs@gmail.com");
   return (
     <div className="selector">
+    {/* <Header /> */}
       <ScheduleMeeting
         borderRadius={10}
-        primaryColor="#3f5b85"
+        primaryColor="#00000"
         eventDurationInMinutes={30}
         availableTimeslots={availableTimeslots}
         onStartTimeSelect={isEmailValid("anandtanishqs@gmail.com")}
@@ -45,6 +48,16 @@ function Calendar() {
           id="outlined-number"
           label="Number"
           type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+        />
+        <TextField
+          style={{ marginLeft: 50 }}
+          id="outlined-number"
+          label="Email"
+          type="text"
           InputLabelProps={{
             shrink: true,
           }}

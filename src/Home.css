@@ -1,11 +1,14 @@
+.container{
+  height : calc(100vh - 80px);
+}
 .home {
   display: flex;
   flex: 1;
   flex-direction: column;
   padding-top: 15px;
   padding-left: 15px;
-  background-color: #000;
   height: 100%;
+  background-color: #000;
   color: #fff;
 }
 .home__container {
@@ -15,9 +18,8 @@
   flex-direction: row;
 }
 .home__text {
-  flex: 0.4;
+  flex: 0.6;
   margin-bottom: 15px;
-  border-right: 0.000000000000009px solid gray;
 }
 .home__text:first-child {
   align-items: center;
@@ -25,7 +27,7 @@
 .home__thumb {
   top: 0;
   left: 0;
-  flex: 0.6;
+  flex: 0.4;
   justify-content: center;
   margin-left: 5vw;
   align-items: center;
@@ -40,7 +42,8 @@
   font-size: 15px;
   font-weight: 5;
 }
-.spacing {
-  height: 26px;
-  background-color: #000;
+
+.homeThumb__thumbnail{
+  width : 50%;
+  height : 50%;
 }

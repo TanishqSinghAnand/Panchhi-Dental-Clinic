@@ -21,11 +21,11 @@ const Header = () => {
               alt="Logo"
             />
           </a>
-          <h2>Panchhi Dental Clinic</h2>
+          <p>Panchhi Dental Clinic</p>
         </div>
         <ul className={click ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}>
-            <Link
+            {/* <Link
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -37,12 +37,12 @@ const Header = () => {
                 padding: "2px",
               }}
               to="/timings"
-            >
+            > */}
               <h5 className="btnText">Timings</h5>
-            </Link>
+            {/* </Link> */}
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <Link
+            {/* <Link
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -54,12 +54,12 @@ const Header = () => {
                 padding: "2px",
               }}
               to="/contact"
-            >
+            > */}
               <h5 className="btnText">Contact</h5>
-            </Link>
+            {/* </Link> */}
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <Link
+            {/* <Link
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -71,12 +71,12 @@ const Header = () => {
                 padding: "2px",
               }}
               to="/gallery"
-            >
+            > */}
               <h5 className="btnText">Gallery</h5>
-            </Link>
+            {/* </Link> */}
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            <Link
+            {/* <Link
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -88,9 +88,9 @@ const Header = () => {
                 padding: "2px",
               }}
               to="/faq"
-            >
+            > */}
               <h5 className="btnText">FAQs</h5>
-            </Link>
+            {/* </Link> */}
           </li>
         </ul>
       </div>

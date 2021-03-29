@@ -1,0 +1,27 @@
+.con{
+    height : 100vh;
+    width : 100%;
+    background-color: #000000;
+    color: #fff;
+    text-decoration: none
+}
+.contact {
+    height: 100vh;
+  display: grid;
+  
+  grid-template-columns: auto auto;
+  padding: 10px;
+}
+.contact__divs{
+  color : #fff;
+}
+.contact__divs a {
+  text-decoration: none;
+}
+.an {
+  text-decoration: none;
+  color: rgba(0, 225, 255, 0.925);
+}
+.contact__divs a:active{
+  text-decoration: none;
+}
