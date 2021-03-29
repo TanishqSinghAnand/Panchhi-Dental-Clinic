@@ -38,7 +38,7 @@
   padding-left: 15px;
   display: grid;
   grid-template-columns: repeat(4, auto);
-  grid-gap: 40px;
+  grid-gap: auto;
   list-style-type: none;
 }
 
@@ -81,7 +81,8 @@
     transition: all 0.5s ease;
     flex-direction: column;
     list-style-type: none;
-    grid-gap: 0px;
+    grid-gap: 100px;
+    padding: 50px;
   }
   .nav-options.active {
     background: #9899d1;
@@ -103,19 +104,8 @@
     justify-content: center;
     width: 100%;
   }
-  .sign-up {
-    background: rgb(222, 9, 241);
-    border-radius: 3px;
-    color: white;
-    padding: 20px 0px;
-    width: 80%;
-    align-self: center;
-    border-radius: 3px;
-  }
 
-  .signin-up {
-    display: none;
-  }
+
   .mobile-menu {
   left : -200px;
   display: block;
