@@ -25,7 +25,7 @@ const Header = () => {
         </div>
         <ul className={click ? "nav-options active" : "nav-options"}>
           <li className="option" onClick={closeMobileMenu}>
-            {/* <Link
+            <a
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -36,13 +36,13 @@ const Header = () => {
                 height: "1vw",
                 padding: "2px",
               }}
-              to="/timings"
-            > */}
+              href="#timmings"
+            >
               <h5 className="btnText">Timings</h5>
-            {/* </Link> */}
+            </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            {/* <Link
+            <a
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -53,13 +53,13 @@ const Header = () => {
                 height: "1vw",
                 padding: "2px",
               }}
-              to="/contact"
-            > */}
+              href="#contact"
+            >
               <h5 className="btnText">Contact</h5>
-            {/* </Link> */}
+            </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            {/* <Link
+            <a
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -70,13 +70,13 @@ const Header = () => {
                 height: "1vw",
                 padding: "2px",
               }}
-              to="/gallery"
-            > */}
+              href="#gallery"
+            >
               <h5 className="btnText">Gallery</h5>
-            {/* </Link> */}
+            </a>
           </li>
           <li className="option" onClick={closeMobileMenu}>
-            {/* <Link
+            <a
               style={{
                 textDecoration: "none",
                 color: "#000",
@@ -87,10 +87,10 @@ const Header = () => {
                 height: "1vw",
                 padding: "2px",
               }}
-              to="/faq"
-            > */}
+              href="#faq"
+            >
               <h5 className="btnText">FAQs</h5>
-            {/* </Link> */}
+            </a>
           </li>
         </ul>
       </div>

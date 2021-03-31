@@ -2,7 +2,8 @@ import React from "react";
 import "./Home.css";
 import Fade from "react-reveal/Fade";
 import Header from "./Components/Header/Header";
-
+import { Slide } from "react-slideshow-image";
+const slideshow = true;
 function Home() {
   return (
     <div className="container">

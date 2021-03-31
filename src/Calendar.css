@@ -1,0 +1,17 @@
+.sendInfor{
+    display : flex;
+    flex : 1;
+    flex-direction : column;
+    padding: 5px;
+}
+.inp{
+    margin-bottom: 10px;
+}
+.Timmings{
+    visibility: hidden;
+    opacity: 0;
+    width : 2px;
+    height : 0px;
+    border: none;
+    cursor : default ;
+}

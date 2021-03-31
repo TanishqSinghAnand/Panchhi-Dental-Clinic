@@ -1,10 +1,15 @@
-import React, { setState } from "react";
+import React, { useState } from "react";
 import { ScheduleMeeting } from "react-schedule-meeting";
 import TextField from "@material-ui/core/TextField";
 import db from "./firebase";
 import Header from "./Components/Header/Header";
 import DayTimePicker from "@mooncake-dev/react-day-time-picker";
 import emailjs from "emailjs-com";
+import "./Calendar.css";
+import Button from "@material-ui/core/Button";
+import * as EmailValidator from "email-validator";
+import validator from "validator";
+import { validate } from "email-validator";
 function timeSlotValidator(slotTime) {
   const eveningTime = new Date(
     slotTime.getFullYear(),
@@ -29,6 +34,39 @@ function timeSlotValidator(slotTime) {
 }
 
 function Calendar() {
+  
+  console.log("Validation = " + validate("anandtanishqs@gmail.com"))
+  const [email, setEmail] = useState("");
+  const [phoneNum, setPhoneNum] = useState(null);
+  const [name, setName] = useState("");
+  const [time, setTime] = useState("");
+  const [isCalVisible, setIsCalVisible] = useState(false);
+  function toggle() {
+    var isValid = validate(email)
+    if (name === "") {
+      alert("Please enter you Name");
+    } else if (email === "") {
+      alert("Please enter your email");
+    } else if (phoneNum === null) {
+      alert("Please enter your phone number");
+    } else if (phoneNum.lenght < 10) {
+      alert("Please enter a valid phone number");
+    } else if (isValid !== true) {
+      alert("Please enter a valid email address");
+    } else 
+    // if (
+    //   name != "" &&
+    //   email != "" &&
+    //   phoneNum != null &&
+    //   phoneNum.lenght >= 10 &&
+    //   isValid === true
+    // ) 
+    {
+      console.log(isCalVisible);
+      setIsCalVisible(true);
+      console.log(isCalVisible);
+    }
+  }
   function sendEmail(e) {
     e.preventDefault();
 
@@ -37,61 +75,203 @@ function Calendar() {
       .then(
         (result) => {
           console.log(result.text);
+          alert("Appointment Booking request succesful you will be contacted shortly via a call or whastapp")
         },
         (error) => {
           console.log(error.text);
         }
       );
   }
-  return (
-    <div className="selector">
-      {/* <Header /> */}
-      <DayTimePicker
-        timeSlotSizeMinutes={30}
-        timeSlotValidator={timeSlotValidator}
-      />
+  const handleScheduled = (dateTime) => {
+    setTime(dateTime);
+    console.log(time)
+    document.getElementById("tsaSubmit").click()
+  };
+  console.log(isCalVisible);
 
-      {/* Fields */}
-      <div className="sendInfo">
-        <form onSubmit={sendEmail}>
-          <TextField
-            style={{ marginLeft: 50 }}
-            id="outlined-number"
-            label="Name"
-            type="Text"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            variant="outlined"
-            name="name"
-          />
-          <TextField
-            style={{ marginLeft: 50 }}
-            id="outlined-number"
-            label="E Mail ID"
-            type="text"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            variant="outlined"
-            name="email"
-          />
-          <TextField
-            style={{ marginLeft: 50 }}
-            id="outlined-number"
-            label="Number"
-            type="number"
-            InputLabelProps={{
-              shrink: true,
-            }}
-            variant="outlined"
-            name="phone_number"
-          />
-          <button type="submit">Submit</button>
-        </form>
+  console.log(isCalVisible);
+  if (isCalVisible === true) {
+    console.log(isCalVisible);
+
+    return (
+      <div className="selector">
+        <DayTimePicker
+          timeSlotSizeMinutes={30}
+          timeSlotValidator={timeSlotValidator}
+          onConfirm={handleScheduled}
+        />
+        <div className="sendInfo">
+          <div className="sendInfor">
+            <TextField
+              style={{ marginBottom: "50px" }}
+              id="outlined-number"
+              label="Name"
+              type="Text"
+              value={name}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              onChange={(text) => {
+                setName(text.target.value);
+              }}
+              variant="outlined"
+              name="name"
+              className="inp"
+              required
+            />
+            <TextField
+              style={{ marginBottom: "50px" }}
+              id="outlined-number"
+              label="E Mail ID"
+              type="text"
+              value={email}
+              onChange={(text) => {
+                setEmail(text.target.value);
+              }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              name="email"
+              className="inp"
+              required
+            />
+            <TextField
+              style={{ marginBottom: "50px" }}
+              id="outlined-number"
+              label="Number"
+              type="number"
+              value={phoneNum}
+              onChange={(text) => {
+                setPhoneNum(text.target.value);
+              }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              name="phone_number"
+              className="inp"
+              required
+            />
+          </div>
+        </div>
+        <div className="sendInfo">
+          <form onSubmit={sendEmail} className="sendInfor">
+            <input
+              type="text"
+              className="invisible"
+              type="hidden"
+              // name="Timmings"
+              value={time}
+              name="time"
+            />
+            <input
+              type="text"
+              className="invisible"
+              type="hidden"
+              // name="Timmings"
+              value={email}
+              name="email"
+            />
+            <input
+              type="text"
+              className="invisible"
+              type="hidden"
+              // name="Timmings"
+              value={phoneNum}
+              name="number"
+            />
+            <input
+              type="text"
+              className="invisible"
+              type="hidden"
+              // name="Timmings"
+              value={name}
+              name="name"
+            />
+            <Button type="submit" id="tsaSubmit" variant="contained">
+              Submit
+            </Button>
+          </form>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else if (isCalVisible === false) {
+    console.log(isCalVisible);
+
+    return (
+      <div className="selector">
+        {/* <Header /> */}
+        <div className="sendInfo">
+          <div className="sendInfor">
+            <TextField
+              style={{ marginBottom: "50px" }}
+              id="outlined-number"
+              label="Name"
+              type="Text"
+              value={name}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              onChange={(text) => {
+                setName(text.target.value);
+              }}
+              variant="outlined"
+              name="name"
+              className="inp"
+              required
+            />
+            <TextField
+              style={{ marginBottom: "50px" }}
+              id="outlined-number"
+              label="E Mail ID"
+              type="text"
+              value = {email}
+              onChange={(text) => {
+                setEmail(text.target.value);
+              }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              name="email"
+              className="inp"
+              required
+            />
+            <TextField
+              style={{ marginBottom: "50px" }}
+              id="outlined-number"
+              label="Number"
+              type="number"
+              value = {phoneNum}
+              onChange={(text) => {
+                setPhoneNum(text.target.value);
+              }}
+              InputLabelProps={{
+                shrink: true,
+              }}
+              variant="outlined"
+              name="phone_number"
+              className="inp"
+              required
+            />
+            <Button
+              onClick={() => {
+                toggle()
+                console.log(isCalVisible)
+              }}
+              variant="contained"
+            >
+              Slect Appointment
+            </Button>
+          </div>
+        </div>
+        
+
+        {/* Fields */}
+      </div>
+    );
+  }
 }
 
 export default Calendar;

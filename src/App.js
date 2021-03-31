@@ -19,19 +19,29 @@ function App() {
         {/* <Redirect to="/home" /> */}
         {/* <Switch> */}
           {/* <Route path="/home"> */}
+            <section id = "#">
             <Home />
+            </section>
           {/* </Route> */}
           {/* <Route path="/contact"> */}
+            <section id="contact">
             <Contact />
+            </section>
           {/* </Route> */}
           {/* <Route path="/faq"> */}
+            <section id="faq">
             <Faq />
+            </section>
           {/* </Route> */}
           {/* <Route path="/gallery"> */}
+            <section id="gallery">
             <Gallery />
+            </section>
           {/* </Route> */}
           {/* <Route path="/timings"> */}
+            <section id="timmings">
             <Timings />
+            </section>
           {/* </Route> */}
         {/* </Switch> */}
       {/* </Router> */}
