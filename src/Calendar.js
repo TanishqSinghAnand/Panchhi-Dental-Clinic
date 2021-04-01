@@ -68,7 +68,8 @@ function Calendar() {
     }
   }
   function sendEmail(e) {
-    e.preventDefault();
+    try{e.preventDefault();}
+    catch{return null}
 
     emailjs
       .sendForm("gmail", "template_def", e.target, "user_UxxNSe08V2cbFBLvnceoH")
@@ -82,10 +83,11 @@ function Calendar() {
         }
       );
   }
-  const handleScheduled = (dateTime) => {
+  const handleScheduled = (dateTime , e) => {
     setTime(dateTime);
     console.log(time)
-    document.getElementById("tsaSubmit").click()
+    // document.getElementById("tsaSubmit").click()
+    sendEmail()
   };
   console.log(isCalVisible);
 
@@ -95,11 +97,6 @@ function Calendar() {
 
     return (
       <div className="selector">
-        <DayTimePicker
-          timeSlotSizeMinutes={30}
-          timeSlotValidator={timeSlotValidator}
-          onConfirm={handleScheduled}
-        />
         <div className="sendInfo">
           <div className="sendInfor">
             <TextField
@@ -157,6 +154,13 @@ function Calendar() {
         </div>
         <div className="sendInfo">
           <form onSubmit={sendEmail} className="sendInfor">
+            <DayTimePicker
+              timeSlotSizeMinutes={30}
+              timeSlotValidator={timeSlotValidator}
+              onConfirm={handleScheduled}
+              type="hidden"
+              name="time"
+            />
             <input
               type="text"
               className="invisible"
@@ -189,9 +193,9 @@ function Calendar() {
               value={name}
               name="name"
             />
-            <Button type="submit" id="tsaSubmit" variant="contained">
+            {/* <Button type="submit" id="tsaSubmit" variant="contained">
               Submit
-            </Button>
+            </Button> */}
           </form>
         </div>
       </div>
