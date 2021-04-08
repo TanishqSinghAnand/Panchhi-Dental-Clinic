@@ -11,40 +11,56 @@ import Faq from "./FAQ";
 import Gallery from "./Gallery";
 import Timings from "./Timings";
 import Header from "./Components/Header/Header";
+import Particles from "react-particles-js";
+import Slider from './Components/Image SlideShow/Gallery'
 function App() {
   return (
     <div style={{ height: "100%" }}>
-      <Header/>
-      {/* <Router> */}
-        {/* <Redirect to="/home" /> */}
-        {/* <Switch> */}
-          {/* <Route path="/home"> */}
-            <section id = "#">
-            <Home />
-            </section>
-          {/* </Route> */}
-          {/* <Route path="/contact"> */}
-            <section id="contact">
-            <Contact />
-            </section>
-          {/* </Route> */}
-          {/* <Route path="/faq"> */}
-            <section id="faq">
-            <Faq />
-            </section>
-          {/* </Route> */}
-          {/* <Route path="/gallery"> */}
-            <section id="gallery">
-            <Gallery />
-            </section>
-          {/* </Route> */}
-          {/* <Route path="/timings"> */}
-            <section id="timmings">
-            <Timings />
-            </section>
-          {/* </Route> */}
-        {/* </Switch> */}
-      {/* </Router> */}
+      <Header />
+      {/* <div className="par">
+        <Particles
+          // className="par"
+          params={{
+            particles: {
+              line_linked: {
+                shadow: {
+                  enable: true,
+                  color: "#3CA9D1",
+                  blur: 5,
+                },
+              },
+            },
+          }}
+          style={{
+            width: "100%",
+            backgroundColor: "black",
+          }}
+        />
+      </div> */}
+
+      <section id="#">
+        <Home />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
+
+      <section id="faq">
+        <Faq />
+      </section>
+
+      <section id="gallery">
+        <Gallery />
+      </section>
+
+      <section id="timmings">
+        <Timings />
+      </section>
+      <section id="gallery">
+        {/* <SlideShow /> */}
+        <Slider/>
+      </section>
     </div>
   );
 }

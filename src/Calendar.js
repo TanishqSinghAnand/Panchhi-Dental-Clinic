@@ -34,15 +34,37 @@ function timeSlotValidator(slotTime) {
 }
 
 function Calendar() {
-  
-  console.log("Validation = " + validate("anandtanishqs@gmail.com"))
+    
+  console.log("Validation = " + validate("anandtanishqs@gmail.com"));
   const [email, setEmail] = useState("");
   const [phoneNum, setPhoneNum] = useState(null);
   const [name, setName] = useState("");
   const [time, setTime] = useState("");
   const [isCalVisible, setIsCalVisible] = useState(false);
+
+
+
+
+  function sendWhatsappMessage() {
+    const accountSid = "AC4e197ad8662ecc7d9bccf943d21d38e6";
+    const authToken = "28d4a6c0a6904409468721718243ebef";
+    const client = require("twilio")(
+      "AC4e197ad8662ecc7d9bccf943d21d38e6",
+      "28d4a6c0a6904409468721718243ebef"
+    );
+
+    client.messages
+      .create({
+        body: `Your Appointment is to be conforimed at 5O clock`,
+        from: `whatsapp:+14155238886`,
+        to: `whatsapp:+917837552077`,
+      })
+      .then((message) => console.log(message.sid))
+      .done();
+  }
+
   function toggle() {
-    var isValid = validate(email)
+    var isValid = validate(email);
     if (name === "") {
       alert("Please enter you Name");
     } else if (email === "") {
@@ -53,41 +75,48 @@ function Calendar() {
       alert("Please enter a valid phone number");
     } else if (isValid !== true) {
       alert("Please enter a valid email address");
-    } else 
-    // if (
+    }
+    else if(phoneNum.lenght > 10) {
+      alert("Pls enter a valid phone number without country code")
+    }    // if (
     //   name != "" &&
     //   email != "" &&
     //   phoneNum != null &&
     //   phoneNum.lenght >= 10 &&
     //   isValid === true
-    // ) 
-    {
+    // )
+    else {
       console.log(isCalVisible);
       setIsCalVisible(true);
       console.log(isCalVisible);
     }
   }
   function sendEmail(e) {
-    try{e.preventDefault();}
-    catch{return null}
+    try {
+      e.preventDefault();
+    } catch {
+      return null;
+    }
 
     emailjs
       .sendForm("gmail", "template_def", e.target, "user_UxxNSe08V2cbFBLvnceoH")
       .then(
         (result) => {
           console.log(result.text);
-          alert("Appointment Booking request succesful you will be contacted shortly via a call or whastapp")
+          alert(
+            "Appointment Booking request succesful you will be contacted shortly via a call or whastapp"
+          );
         },
         (error) => {
           console.log(error.text);
         }
       );
   }
-  const handleScheduled = (dateTime , e) => {
+  const handleScheduled = (dateTime, e) => {
     setTime(dateTime);
-    console.log(time)
+    console.log(time);
     // document.getElementById("tsaSubmit").click()
-    sendEmail()
+    sendEmail();
   };
   console.log(isCalVisible);
 
@@ -144,6 +173,9 @@ function Calendar() {
               }}
               InputLabelProps={{
                 shrink: true,
+              }}
+              inputProps={{
+                maxLength: 10,
               }}
               variant="outlined"
               name="phone_number"
@@ -230,7 +262,7 @@ function Calendar() {
               id="outlined-number"
               label="E Mail ID"
               type="text"
-              value = {email}
+              value={email}
               onChange={(text) => {
                 setEmail(text.target.value);
               }}
@@ -247,12 +279,15 @@ function Calendar() {
               id="outlined-number"
               label="Number"
               type="number"
-              value = {phoneNum}
+              value={phoneNum}
               onChange={(text) => {
                 setPhoneNum(text.target.value);
               }}
               InputLabelProps={{
                 shrink: true,
+              }}
+              inputProps={{
+                maxLength: 10,
               }}
               variant="outlined"
               name="phone_number"
@@ -261,8 +296,9 @@ function Calendar() {
             />
             <Button
               onClick={() => {
-                toggle()
-                console.log(isCalVisible)
+                toggle();
+                console.log(isCalVisible);
+                sendWhatsappMessage("5 O clock")
               }}
               variant="contained"
             >
@@ -270,7 +306,6 @@ function Calendar() {
             </Button>
           </div>
         </div>
-        
 
         {/* Fields */}
       </div>

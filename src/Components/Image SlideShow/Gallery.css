@@ -1,0 +1,13 @@
+.slider{
+    padding : 10%;
+    margin : 10px;
+    align-items : center;
+    justify-content : center;
+    display : flex;
+    flex-direction : column;
+    margin-top : -200px;
+}
+
+.apcing{
+    height : 20px;
+}

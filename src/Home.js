@@ -28,9 +28,10 @@ function Home() {
               </p>
             </div>
 
+            {/*  */}
             <div className="home__thumb">
               <img
-                src="https://content.jdmagicbox.com/comp/chandigarh/w3/0172px172.x172.180606140647.x1w3/catalogue/melody-dental-studio-implant-centre-chandigarh-t4yb0.jpg?clr="
+                src="https://media.oralhealthgroup.com/uploads/2020/02/ISCS-press-image-sinius-1024x768.jpg"
                 // width="600"
                 // hwight="60"
                 alt=""

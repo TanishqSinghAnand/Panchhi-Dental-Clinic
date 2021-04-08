@@ -1,19 +1,24 @@
-.con{
-    height : 100vh;
-    width : 100%;
-    background-color: #000000;
-    color: #fff;
-    text-decoration: none
+.con {
+  height: calc(100vh + 10px);
+  width: 100%;
+  background-color: #000000;
+  color: #fff;
+  text-decoration: none;
 }
 .contact {
-    height: 100vh;
+  height: 100vh;
   display: grid;
-  
   grid-template-columns: auto auto;
   padding: 10px;
 }
-.contact__divs{
-  color : #fff;
+.contact__divs {
+  color: #fff;
+  border: solid 1px #a6a49f;
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom : 5px;
 }
 .contact__divs a {
   text-decoration: none;
@@ -22,6 +27,17 @@
   text-decoration: none;
   color: rgba(0, 225, 255, 0.925);
 }
-.contact__divs a:active{
+.contact__divs a:active {
   text-decoration: none;
+}
+@media (max-width: 648px) {
+
+.contact{
+  display: flex;
+  flex-direction: column;
+}
+.contact__divs{
+  height : 40vw;
+  display: flex;
+}
 }

@@ -27,9 +27,9 @@
 .home__thumb {
   top: 0;
   left: 0;
+  width: 100%;
   flex: 0.4;
   justify-content: center;
-  margin-left: 5vw;
   align-items: center;
 }
 
@@ -46,4 +46,21 @@
 .homeThumb__thumbnail{
   width : 50%;
   height : 50%;
+}
+
+@media (max-width: 648px) {
+  .home__text{
+    margin-bottom : 0 ;
+  }
+  .home__container{
+    flex-direction: column;
+  }
+  .home__thumb{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-left : 0;
+    margin-top : -100 ;
+  }
 }
