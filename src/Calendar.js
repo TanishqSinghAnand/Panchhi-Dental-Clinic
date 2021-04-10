@@ -45,23 +45,7 @@ function Calendar() {
 
 
 
-  function sendWhatsappMessage() {
-    const accountSid = "AC4e197ad8662ecc7d9bccf943d21d38e6";
-    const authToken = "28d4a6c0a6904409468721718243ebef";
-    const client = require("twilio")(
-      "AC4e197ad8662ecc7d9bccf943d21d38e6",
-      "28d4a6c0a6904409468721718243ebef"
-    );
-
-    client.messages
-      .create({
-        body: `Your Appointment is to be conforimed at 5O clock`,
-        from: `whatsapp:+14155238886`,
-        to: `whatsapp:+917837552077`,
-      })
-      .then((message) => console.log(message.sid))
-      .done();
-  }
+  
 
   function toggle() {
     var isValid = validate(email);
@@ -182,6 +166,9 @@ function Calendar() {
               className="inp"
               required
             />
+
+              
+
           </div>
         </div>
         <div className="sendInfo">
@@ -298,7 +285,6 @@ function Calendar() {
               onClick={() => {
                 toggle();
                 console.log(isCalVisible);
-                sendWhatsappMessage("5 O clock")
               }}
               variant="contained"
             >
