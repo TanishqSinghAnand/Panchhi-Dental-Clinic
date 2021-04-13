@@ -1,12 +1,12 @@
 .con {
-  height: calc(100vh + 10px);
+  /* height: ; */
   width: 100%;
   background-color: #000000;
   color: #fff;
   text-decoration: none;
 }
 .contact {
-  height: 100vh;
+  height: 50vh;
   display: grid;
   grid-template-columns: auto auto;
   padding: 10px;
@@ -35,9 +35,10 @@
 .contact{
   display: flex;
   flex-direction: column;
+  height : auto;
 }
 .contact__divs{
-  height : 40vw;
+  height : 7vh;
   display: flex;
 }
 }

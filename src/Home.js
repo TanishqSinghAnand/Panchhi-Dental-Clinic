@@ -32,8 +32,8 @@ function Home() {
             <div className="home__thumb">
               <img
                 src="https://media.oralhealthgroup.com/uploads/2020/02/ISCS-press-image-sinius-1024x768.jpg"
-                // width="600"
-                // hwight="60"
+                width="100%"
+                hwight="60"
                 alt=""
                 className="homeThumb__thumbnail"
               />

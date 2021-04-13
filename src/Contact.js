@@ -3,9 +3,7 @@ import { BrowserView, MobileView } from "react-device-detect";
 import "./Contact.css";
 import Header from "./Components/Header/Header";
 
-
 function Contact() {
-  
   return (
     <div className="con">
       {/* <Header /> */}
@@ -16,11 +14,13 @@ function Contact() {
             gurpreetananddr@gmail.com
           </a>
         </div>
-        <div className="contact__divs">
-          <BrowserView><p> Phone Number - 9872006958</p></BrowserView>
-        </div>
-        <MobileView>
-          <div className="contact__divs">
+        <BrowserView className="contact__divs">
+          <div >
+            <p> Phone Number - 9872006958</p>
+          </div>
+        </BrowserView>
+        <MobileView className="contact__divs">
+          <div >
             Phone Number <a href="tel:9872006958">9872006958</a>
           </div>
         </MobileView>

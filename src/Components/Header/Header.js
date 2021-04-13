@@ -111,28 +111,19 @@ const Header = () => {
           { name: "Gallery", to: "#gallery" },
           { name: "FAQs", to: "#faq" },
         ]}
-        // social={[
-        //   {
-        //     name: "Linkedin",
-        //     url: "https://www.linkedin.com/in/nazeh-taha/",
-        //     icon: ["fab", "linkedin-in"],
-        //   },
-        //   {
-        //     name: "Facebook",
-        //     url: "https://www.facebook.com/nazeh200/",
-        //     icon: ["fab", "facebook-f"],
-        //   },
-        //   {
-        //     name: "Instagram",
-        //     url: "https://www.instagram.com/nazeh_taha/",
-        //     icon: ["fab", "instagram"],
-        //   },
-        //   {
-        //     name: "Twitter",
-        //     url: "http://nazehtaha.herokuapp.com/",
-        //     icon: ["fab", "twitter"],
-        //   },
-        // ]}
+        social={[
+          {
+            name: "Linkedin",
+            url:
+              "https://www.linkedin.com/in/dr-gurpreet-kaur-anand-2b080b20b/",
+            icon: ["fab", "linkedin-in"],
+          },
+          {
+            name: "Facebook",
+            url: "https://www.facebook.com/gurpreet.anand.7739/",
+            icon: ["fab", "facebook-f"],
+          },
+        ]}
       />
       {/* <ReactNavbar
         color="rgb(25, 25, 25)"
